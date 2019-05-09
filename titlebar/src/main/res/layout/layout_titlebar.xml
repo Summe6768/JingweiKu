@@ -3,24 +3,33 @@
     android:id="@+id/rlBg"
     android:layout_width="match_parent"
     android:layout_height="50.33dp"
-    android:background="@color/colorTheme">
+    android:background="@color/colorBlack">
 
     <ImageView
         android:id="@+id/imgLeftBack"
         android:layout_width="37dp"
         android:layout_height="match_parent"
+        android:layout_centerVertical="true"
         android:paddingTop="14dp"
         android:paddingBottom="14dp"
-        android:layout_centerVertical="true"
         android:src="@mipmap/titlebar_back" />
 
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="这是一个标题"
-        android:textColor="#000"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:text="中间文字"
+        android:textColor="@color/colorWhite" />
 
+    <TextView
+        android:id="@+id/tvRight"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:gravity="center"
+        android:paddingRight="14dp"
+        android:text="右边文字"
+        android:textColor="@color/colorWhite" />
 
 </RelativeLayout>

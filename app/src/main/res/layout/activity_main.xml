@@ -7,11 +7,12 @@
     tools:context=".MainActivity">
 
     <com.app.summer.titlebar.TitleBar
-        android:id="@+id/titleBar"
+        android:id="@+id/title111"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:titleText="标题"
-        app:titleBg="#000"/>
+        app:titleRight="右边"
+        app:titleLeftImg="@drawable/leftimg"/>
+
 
 
 
