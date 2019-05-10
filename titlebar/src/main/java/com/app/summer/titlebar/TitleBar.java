@@ -3,6 +3,7 @@ package com.app.summer.titlebar;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -17,12 +18,17 @@ import com.app.summer.titlebar.Interface.OnClickListenerRight;
 public class TitleBar extends LinearLayout implements View.OnClickListener {
 
     private int mTitleBg;
-    private String mTitleText;
-    private int mTitleTextColor;
-    private String mTitleRight;
-    private int mTitleRightColor;
+
     private int mTitleLeftImg;
 
+    private String mTitleText;
+    private int mTitleTextColor;
+    private int mTitleTextSize;
+
+    private String mTitleRight;
+    private int mTitleRightColor;
+    private int mTitleRightTextSize;
+/*************************************/
     private RelativeLayout mRlBg;
     private TextView mTvTitle;
     private ImageView mImgLeftBack;
@@ -46,9 +52,11 @@ public class TitleBar extends LinearLayout implements View.OnClickListener {
 
         mTitleText = typedArray.getString(R.styleable.TitleBar_titleText);
         mTitleTextColor = typedArray.getColor(R.styleable.TitleBar_titleTextColor, 0xFFFFFFFF);
+        mTitleTextSize = typedArray.getInteger(R.styleable.TitleBar_titleTextSize,15);
 
         mTitleRight = typedArray.getString(R.styleable.TitleBar_titleRight);
         mTitleRightColor = typedArray.getColor(R.styleable.TitleBar_titleRightColor, 0xFFFFFFFF);
+        mTitleRightTextSize = typedArray.getInteger(R.styleable.TitleBar_titleRightTextSize,15);
 
         typedArray.recycle();
 
@@ -85,9 +93,16 @@ public class TitleBar extends LinearLayout implements View.OnClickListener {
         //中间属性
         mTvTitle.setText(mTitleText);
         mTvTitle.setTextColor(mTitleTextColor);
+        mTvTitle.setTextSize(mTitleTextSize);
+        mTvTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX,mTitleTextSize); //px
+        mTvTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP,mTitleTextSize); //SP
+        mTvTitle.setTextSize(TypedValue.COMPLEX_UNIT_DIP,mTitleTextSize);//DIP
         //右边属性
         mTvRight.setText(mTitleRight);
         mTvRight.setTextColor(mTitleRightColor);
+        mTvRight.setTextSize(TypedValue.COMPLEX_UNIT_PX,mTitleRightTextSize);
+        mTvRight.setTextSize(TypedValue.COMPLEX_UNIT_SP,mTitleRightTextSize);
+        mTvRight.setTextSize(TypedValue.COMPLEX_UNIT_DIP,mTitleRightTextSize);
     }
 
 
@@ -104,6 +119,37 @@ public class TitleBar extends LinearLayout implements View.OnClickListener {
                 onClickListenerRight.OnClickRight();
             }
         }
+    }
+
+    /**
+     * 设置左边图片
+     * @param resId
+     */
+    public void setTitleLeftImg(int resId){
+        mTitleLeftImg = resId;
+        mImgLeftBack.setImageResource(mTitleLeftImg);
+    }
+
+    /**
+     * 设置中间文字的大小
+     * @param size
+     */
+    public void setTitleTextSize(int size){
+        mTitleTextSize = size;
+        mTvTitle.setTextSize(TypedValue.COMPLEX_UNIT_PX,mTitleTextSize);
+        mTvTitle.setTextSize(TypedValue.COMPLEX_UNIT_SP,mTitleTextSize);
+        mTvTitle.setTextSize(TypedValue.COMPLEX_UNIT_DIP,mTitleTextSize);
+    }
+
+    /**
+     * 设置右边文字的大小
+     * @param size
+     */
+    public void setTitleRightTextSize(int size){
+        mTitleRightTextSize = size;
+        mTvRight.setTextSize(TypedValue.COMPLEX_UNIT_PX,mTitleRightTextSize);
+        mTvRight.setTextSize(TypedValue.COMPLEX_UNIT_SP,mTitleRightTextSize);
+        mTvRight.setTextSize(TypedValue.COMPLEX_UNIT_DIP,mTitleRightTextSize);
     }
 
 

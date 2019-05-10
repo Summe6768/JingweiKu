@@ -2,10 +2,15 @@
 <resources>
     <declare-styleable name="TitleBar">
         <attr name="titleBg" format="color"/>
+
+        <attr name="titleLeftImg" format="reference"/>
+
         <attr name="titleText" format="string"/>
         <attr name="titleTextColor" format="color"/>
+        <attr name="titleTextSize" format="integer"/>
+
         <attr name="titleRight" format="string"/>
         <attr name="titleRightColor" format="color"/>
-        <attr name="titleLeftImg" format="reference"/>
+        <attr name="titleRightTextSize" format="integer"/>
     </declare-styleable>
 </resources>

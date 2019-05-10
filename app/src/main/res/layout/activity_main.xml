@@ -4,16 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <com.app.summer.titlebar.TitleBar
         android:id="@+id/title111"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:titleBg="@color/colorPrimary"
+        app:titleLeftImg="@drawable/leftimg"
+        app:titleText="中间的"
+        app:titleTextSize="5"
+        app:titleTextColor="@color/colorBlack"
         app:titleRight="右边"
-        app:titleLeftImg="@drawable/leftimg"/>
-
-
+        app:titleRightTextSize="35"
+        app:titleRightColor="@color/colorBlack"/>
 
 
 </LinearLayout>
